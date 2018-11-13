@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+          <a href="{{ url_for('studentRegister') }}" class="btn btn-primary btn-lg">Student Register</a><br/>
+          <a href="{{ url_for('teacherRegister')}}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
+          <a href="{{ url_for('adminLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
+  </div>
+{% endblock %}
+
+{% block profile %}
+    <h2>Admin: {{username}}</h2>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block profile %}
+    <div id="content-container" class="container p-none">
+        <div class="lgn-container col-lg-8">
+            <form style="margin-top:55px;width: 500px" id="login-form" method="POST"
+                  action="">
+
+                <div>
+
+                    <label for="username">username</label><br/>
+                    <input id="username" name="username" type="text" class="form-control">
+                </div>
+                <div><br/>
+                    <label for="password">Password</label><br/>
+                    <input id="password" name="password" type="password" class="form-control">
+                </div>
+                <div>
+                {% if error %}
+                    <p class=" label label-danger">
+                        Your username and password didn't match.
+                        Please try again.
+                    </p>
+                {% endif %}
+                </div><br/>
+                <input style="margin-right:87%" type="submit" value="Login"
+                       class="btn btn-primary pull-right" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+    </div>
+{% endblock %}

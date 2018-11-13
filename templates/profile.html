@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+                <a href="{{ url_for('student_profile') }}" class="btn btn-primary btn-lg">Profile</a><br/>
+                <a href="{{ url_for('student_marks') }}" href="{{ url_for('student_marks')}}" class="btn btn-primary btn-lg">View Marks</a>><br/>
+                <a href="{{ url_for('viewattendance') }}" class="btn btn-primary btn-lg">Attendance</a><br/>
+                <a href="{{ url_for('studentLogout') }}" class="btn btn-primary btn-lg">Logout</a><br/>
+
+
+  </div>
+{% endblock  %}
+
+
+{% block profile %}
+<div class="content-section">
+        <div class="media">
+        <div class="media-body">
+            <h2 class="account-heading">{{ student_info[1]}}</h2>
+        </div>
+        <div><br><br>
+          <table class="table table table-striped">
+
+                  <tr>
+                          <th><h4>User Details</h4></th>
+                  </tr>
+                  <tr>
+                          <td><br/><label>USN : {{student_info[0]}}<label></td>
+                  </tr>
+                  <tr>
+                          <td><br/><label>Email :{{ student_info[5]}}</label></td>
+                  </tr>
+                  <tr>
+                          <td><br/><label>Phone Number : {{student_info[3]}}</label></td>
+                  </tr>
+                  <tr>
+                          <td><br/><label>Sem :{{student_info[2]}}</label></td>
+                  </tr>
+                  <tr>
+                          <td><br/><label>Department :{{student_info[4]}}</label></td>
+                  </tr>
+
+          </table>
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block profile %}
+<div style="margin-top:50px;margin-left:30%">
+    <div class="row">
+        <div class="col-md-3">
+            <h3 style="text-align:center">Admin</h3><br/>
+            <a href="{{ url_for('admin') }}" class="btn btn-primary btn-lg btn-block">Login</a><br/>
+
+        </div>
+        <div class="col-md-3">
+            <h3 style="text-align:center">Student</h3><br/>
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg btn-block">Login</a><br/>
+
+        </div>
+
+    <div class="col-md-3">
+            <h3 style="text-align: center">Teachers</h3><br/>
+            <a href="{{ url_for('teacher_login')}}"class="btn btn-primary btn-lg btn-block">Login</a><br/>
+
+    </div>
+</div>
+{% endblock profile %}

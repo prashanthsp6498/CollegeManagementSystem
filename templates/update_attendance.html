@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+        <a href="{{ url_for('teacher_profile')}}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
+        <a href="{{ url_for('updatemarks') }}" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
+        <a href="{{ url_for('updateattendance') }}" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+</div>
+
+{% endblock %}
+
+
+{% block profile %}
+<div class="content-section">
+        <div class="media">
+        <div><br><br>
+          <form action="" method='POST'>
+            <div class="form-group">
+              {{ form.usn.label }}<br>
+              {{ form.usn }}
+              <br>
+            </div>
+            <div class="form-group">
+              {{ form.subject_name.label }}<br>
+                       {{ form.subject_name }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.total_present.label }}<br>
+                       {{ form.total_present }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.total_class.label }}<br>
+                         {{ form.total_class }}
+                         <br>
+            </div>
+
+
+              {{ form.submit }}
+                       <br>
+          </form>
+        </div>
+</div>
+{% endblock %}

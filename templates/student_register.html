@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+          <a href="" class="btn btn-primary btn-lg">Student Register</a><br/>
+          <a href="{{ url_for('teacherRegister') }}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
+          <a href="{{ url_for('adminLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
+  </div>
+{% endblock  %}
+
+
+{% block profile %}
+<div class="content-section">
+        <div class="media">
+        <div class="media-body">
+            <h2 class="account-heading">Register Student</h2>
+
+        </div>
+        <div><br><br>
+          <form action="" method='POST'>
+            <div class="form-group">
+              {{ form.name.label }}<br>
+              {{ form.name }}
+              <br>
+            </div>
+            <div class="form-group">
+              {{ form.email.label }}<br>
+                       {{ form.email }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.usn.label }}<br>
+                       {{ form.usn }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.phone.label }}<br>
+                         {{ form.phone }}
+                         <br>
+            </div>
+            <div class="form-group">
+              {{ form.gender.label }}<br>
+                       {{ form.gender }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.sem.label }}<br>
+                       {{ form.sem }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.department.label }}<br>
+                       {{ form.department }}
+                       <br>
+            </div>
+            <div class="form-group">
+              {{ form.password.label }}<br>
+                       {{ form.password }}
+                       <br>
+            </div>
+
+            {% if error %}
+                <p class=" label label-danger">
+                    Your username and password didn't match.
+                    Please try again.
+                </p>
+            {% endif %}
+                       {{ form.submit }}
+                       <br>
+          </form>
+
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+        <a href="{{ url_for('student_profile')}}" class="btn btn-primary btn-lg">Profile</a><br/>
+        <a href="{{ url_for('student_marks')}}" class="btn btn-primary btn-lg">View Marks</a>><br/>
+        <a href="{{ url_for('viewattendance') }}" class="btn btn-primary btn-lg">Attendance</a><br/>
+        <a href="{{ url_for('studentLogout') }}" class="btn btn-primary btn-lg">Logout</a><br/>
+</div>
+{% endblock content %}
+{% block profile %}
+    <div class="content-section">
+            <div class="media">
+
+            <div class="media-body">
+
+            </div>
+            <div><br><br>
+                <table class="table table-bordered">
+                <h3 style="text-align:center">Marks Details</h3>
+                  <tr>
+
+                          <th>Subject Name</th>
+                          <th>Internal 1</th>
+                          <th>Internal 2</th>
+                          <th>Internal 3</th>
+                  </tr>
+                  {% for d in data %}
+                    {% if data %}
+                    <tr>
+                      <td>{{d[1]}}</td>
+                      <td>{{d[2]}}</td>
+                      <td>{{d[3]}}</td>
+                      <td>{{d[4]}}</td>
+                    </tr>
+                    {% endif %}
+                  {% endfor %}
+
+
+                </table>
+            </div>
+    </div>
+    {% endblock profile %}

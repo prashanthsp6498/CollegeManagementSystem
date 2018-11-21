@@ -2,11 +2,14 @@
 
 {% block content %}
   <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
-          <a href="" class="btn btn-primary btn-lg">Student Register</a><br/>
-          <a href="{{ url_for('teacherRegister') }}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
-          <a href="{{ url_for('adminLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
+          <a href="{{ url_for('adminHome') }}" class="btn btn-primary btn-lg">Home</a><br/>
+          <a href="{{ url_for('studentRegister') }}" class="btn btn-primary btn-lg">Student Register</a><br/>
+          <a href="{{ url_for('studentInfo') }}" class="btn btn-primary btn-lg">Student Info</a><br/>
+          <a href="{{ url_for('teacherRegister' )}}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
+          <a href="{{ url_for('teacherInfo') }}" class="btn btn-primary btn-lg">Teacher Info</a><br/>
+          <a href="{{ url_for('adminLogout') }}" class="btn btn-primary btn-lg">Logout</a><br/>
   </div>
-{% endblock  %}
+{% endblock %}
 
 
 {% block profile %}
@@ -17,57 +20,65 @@
 
         </div>
         <div><br><br>
-          <form action="" method='POST'>
+          <form action="#" method="POST" style="margin-right:225px">
             <div class="form-group">
-              {{ form.name.label }}<br>
-              {{ form.name }}
-              <br>
+              <label for="exampleInputEmail1">Name</label>
+              <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Name" required>
             </div>
             <div class="form-group">
-              {{ form.email.label }}<br>
-                       {{ form.email }}
-                       <br>
+              <label for="exampleInputEmail1">USN</label>
+              <input type="usn" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usn" placeholder="usn" required>
             </div>
             <div class="form-group">
-              {{ form.usn.label }}<br>
-                       {{ form.usn }}
-                       <br>
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="email" required>
             </div>
             <div class="form-group">
-              {{ form.phone.label }}<br>
-                         {{ form.phone }}
-                         <br>
+              <label for="exampleInputEmail1">Phone</label>
+              <input type="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" placeholder="phone" required>
             </div>
             <div class="form-group">
-              {{ form.gender.label }}<br>
-                       {{ form.gender }}
-                       <br>
+              <label for="exampleInputEmail1">Gender</label><br/>
+              <input type="radio" class="" id="exampleInputEmail1" aria-describedby="emailHelp" name="gender" value="male" >Male <br/>
+              <input type="radio" class="" id="exampleInputEmail1" aria-describedby="emailHelp" name="gender" value="female" >Female <br/>
             </div>
             <div class="form-group">
-              {{ form.sem.label }}<br>
-                       {{ form.sem }}
-                       <br>
+              <label for="exampleInputEmail1">Sem</label>
+              <select class="" name="sem">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+
+              </select>
             </div>
             <div class="form-group">
-              {{ form.department.label }}<br>
-                       {{ form.department }}
-                       <br>
-            </div>
-            <div class="form-group">
-              {{ form.password.label }}<br>
-                       {{ form.password }}
-                       <br>
+              <label for="exampleInputEmail1">Department</label>
+              <select class="" name="department">
+                  <option value="cse">cse</option>
+                  <option value="ise">ise</option>
+                  <option value="ece">ece</option>
+                  <option value="mech">mech</option>
+                  <option value="civil">civil</option>
+              </select>
             </div>
 
-            {% if error %}
-                <p class=" label label-danger">
-                    Your username and password didn't match.
-                    Please try again.
-                </p>
-            {% endif %}
-                       {{ form.submit }}
-                       <br>
+            </div>
+            <div class="form-group" style="margin-right:225px">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+
+
+
+
 
         </div>
 </div>

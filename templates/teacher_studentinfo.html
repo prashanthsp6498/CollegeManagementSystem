@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+        <a href="{{ url_for('teacher_profile')}}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
+        <a href="{{ url_for('updatemarks') }}" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
+        <a href="{{ url_for('updateattendance') }}" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+        <a href="{{ url_for('StudentInfo') }}" class="btn btn-primary btn-lg">Student Info</a><br/>
+        <a href="{{ url_for('teacherLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
+
+{% endblock %}
+
+
+
+{% block profile %}
+
+<div class="content-section">
+        <div class="media">
+
+        <center>  <form action="#" method="POST">
+            <input class=""  type="text" name="usn" required>
+            <button type="button" name="button">Search</button>
+          </form></center><br/><br/>
+
+          {% if data %}
+        <div class="media-body">
+            <h2 class="account-heading">Name : {{ data[2] }}</h2>
+        </div>
+        <div><br><br>
+            <table class="table">
+
+                    <tr>
+                            <th><h4 style="text-align:center">User Details</h4></th>
+                    </tr>
+                    <tr>
+                            <td><br/><label>USN : {{ data[1] }}<label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Email : {{ data[6] }}</label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Phone Number : {{ data[4] }}</label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Department : {{ data[5] }}</label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>SEM : {{ data[3] }} </label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Gender : {{ data[8] }}</label></td>
+                    </tr>
+
+            </table>
+        </div>
+        {% endif %}
+
+
+        <hr>
+        <br/><br/>
+        {% if marks %}
+        <table class="table">
+
+                <tr>
+                        <th><h4 >Student Marks Details</h4></th>
+                </tr>
+                <tr>
+                        <th>Sem</th>
+                        <th>Subject_name</th>
+                        <th>internal 1</th>
+                        <th>internal 2</th>
+                        <th>internal 3</th>
+                </tr>
+                {% for mark in marks %}
+                <tr>
+                        <td><br/><label>{{ mark[5] }}</label></td>
+                        <td><br/><label>{{ mark[1] }}<label></td>
+                          <td><br/><label>{{ mark[2] }}</label></td>
+                          <td><br/><label>{{ mark[3] }}</label></td>
+                          <td><br/><label>{{ mark[4] }}</label></td>
+                </tr>
+                {% endfor %}
+
+        </table>
+        {% endif %}
+
+        <hr>
+        {% if marks %}
+
+        <br/><br/>
+        <table class="table">
+
+                <tr>
+                        <center><th><h4 >Student attendance Details</h4></th></center>
+                </tr>
+                <tr>
+                        <th>Subject Name</th>
+                        <th>Total Present</th>
+                        <th>Total Class</th>
+
+                </tr>
+                {% for att in attendance %}
+                <tr>
+                        <td><br/><label>{{ att[1] }}</label></td>
+                        <td><br/><label>{{ att[2] }}<label></td>
+                          <td><br/><label>{{ att[3] }}</label></td>
+
+                </tr>
+                {% endfor %}
+
+        </table>
+        {% endif %}
+        </div>
+
+        {% if error %}
+          <h1> {{error }}</h1>
+        {% endif %}
+</div>
+
+
+{% endblock %}

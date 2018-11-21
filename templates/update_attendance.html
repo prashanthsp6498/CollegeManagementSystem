@@ -4,9 +4,13 @@
 {% block content %}
 
 <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
-        <a href="{{ url_for('teacher_profile')}}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
-        <a href="{{ url_for('updatemarks') }}" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
-        <a href="{{ url_for('updateattendance') }}" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+
+          <a href="{{ url_for('teacher_profile')}}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
+          <a href="{{ url_for('updatemarks') }}" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
+          <a href="{{ url_for('updateattendance') }}" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+          <a href="{{ url_for('StudentInfo') }}" class="btn btn-primary btn-lg">Student Info</a><br/>
+          <a href="{{ url_for('teacherLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
+
 </div>
 
 {% endblock %}
@@ -16,31 +20,24 @@
 <div class="content-section">
         <div class="media">
         <div><br><br>
-          <form action="" method='POST'>
+          <form action="#" method="POST" style="margin-right:225px">
             <div class="form-group">
-              {{ form.usn.label }}<br>
-              {{ form.usn }}
-              <br>
+              <label for="exampleInputEmail1">USN</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usn" placeholder="Name" required>
             </div>
             <div class="form-group">
-              {{ form.subject_name.label }}<br>
-                       {{ form.subject_name }}
-                       <br>
+              <label for="exampleInputEmail1">Subject</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="subject_name" placeholder="Subject" required>
             </div>
             <div class="form-group">
-              {{ form.total_present.label }}<br>
-                       {{ form.total_present }}
-                       <br>
+              <label for="exampleInputEmail1">class present</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="total_present" placeholder="Total present" required>
             </div>
             <div class="form-group">
-              {{ form.total_class.label }}<br>
-                         {{ form.total_class }}
-                         <br>
+              <label for="exampleInputEmail1">Total class</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="total_class" placeholder="Total Class" required>
             </div>
-
-
-              {{ form.submit }}
-                       <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
 </div>

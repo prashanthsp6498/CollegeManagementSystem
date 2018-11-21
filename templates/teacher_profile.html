@@ -7,6 +7,7 @@
             <a href="{{ url_for('teacher_profile') }}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
             <a href="{{ url_for('updatemarks')}}" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
            <a href="{{ url_for('updateattendance') }}" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+           <a href="{{ url_for('StudentInfo') }}" class="btn btn-primary btn-lg">Search Student</a><br/><br/>
            <a href="{{ url_for('teacherLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
     </div>
 
@@ -16,7 +17,7 @@
 <div class="content-section">
         <div class="media">
         <div class="media-body">
-            <h2 class="account-heading">{{ teacher_info[1] }}</h2>
+            <h2 class="account-heading">Name : {{ teacher_info[2] }}</h2>
             <p class="text-secondary">{{ teacher_info[4] }}</p>
         </div>
         <div><br><br>
@@ -26,21 +27,23 @@
                             <th><h4 style="text-align:center">User Details</h4></th>
                     </tr>
                     <tr>
-                            <td><br/><label>ENUM : {{ teacher_info[0] }}<label></td>
+                            <td><br/><label>ENUM : {{ teacher_info[1] }}<label></td>
                     </tr>
                     <tr>
-                            <td><br/><label>Email : {{ teacher_info[4] }}</label></td>
+                            <td><br/><label>Email : {{ teacher_info[5] }}</label></td>
                     </tr>
                     <tr>
-                            <td><br/><label>Phone Number : {{ teacher_info[2] }}</label></td>
+                            <td><br/><label>Phone Number : {{ teacher_info[3] }}</label></td>
                     </tr>
                     <tr>
-                            <td><br/><label>Department : {{ teacher_info[3] }}</label></td>
+                            <td><br/><label>Department : {{ teacher_info[4] }}</label></td>
                     </tr>
                     <tr>
-                            <td><br/><label>Gender : {{ teacher_info[6] }}</label></td>
+                            <td><br/><label>Gender : {{ teacher_info[7] }}</label></td>
                     </tr>
-
+                    <tr>
+                            <td><br/><label>Salary : {{ teacher_info[8] }} /-</label></td>
+                    </tr>
             </table>
         </div>
 </div>

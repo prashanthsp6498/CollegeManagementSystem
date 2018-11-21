@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+          <a href="{{ url_for('adminHome') }}" class="btn btn-primary btn-lg">Home</a><br/>
           <a href="{{ url_for('studentRegister') }}" class="btn btn-primary btn-lg">Student Register</a><br/>
-          <a href="{{ url_for('teacherRegister')}}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
-          <a href="{{ url_for('adminLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
+          <a href="{{ url_for('studentInfo') }}" class="btn btn-primary btn-lg">Student Info</a><br/>
+          <a href="{{ url_for('teacherRegister' )}}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
+          <a href="{{ url_for('teacherInfo') }}" class="btn btn-primary btn-lg">Teacher Info</a><br/>
+          <a href="{{ url_for('adminLogout') }}" class="btn btn-primary btn-lg">Logout</a><br/>
   </div>
 {% endblock %}
 
 {% block profile %}
-    <h2>Admin: {{username}}</h2>
+    <h2>Admin: {{username}}</h2><br/><br/>
+    <h3>Total number of students : {{ student_data[0] }}</h3><br/>
+    <h3>Total number of Teachers : {{ teacher_data[0] }}</h3><br/></br/>
+
 {% endblock %}

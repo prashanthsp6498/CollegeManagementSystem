@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+          <a href="{{ url_for('adminHome') }}" class="btn btn-primary btn-lg">Home</a><br/>
+          <a href="{{ url_for('studentRegister') }}" class="btn btn-primary btn-lg">Student Register</a><br/>
+          <a href="{{ url_for('studentInfo') }}" class="btn btn-primary btn-lg">Student Info</a><br/>
+          <a href="{{ url_for('teacherRegister' )}}" class="btn btn-primary btn-lg">Teacher Register</a><br/>
+          <a href="{{ url_for('teacherInfo') }}" class="btn btn-primary btn-lg">Teacher Info</a><br/>
+          <a href="{{ url_for('adminLogout') }}" class="btn btn-primary btn-lg">Logout</a><br/>
+  </div>
+{% endblock %}
+
+
+{% block profile %}
+<div class="content-section">
+        <div class="media">
+
+        <center>  <form action="#" method="POST">
+            <input class=""  type="text" name="empid" required>
+            <button type="button" name="button">Search</button>
+          </form></center><br/><br/>
+
+          {% if data %}
+        <div class="media-body">
+            <h2 class="account-heading">Name : {{ data[2] }}</h2>
+        </div>
+        <div><br><br>
+            <table class="table">
+
+                    <tr>
+                            <th><h4 style="text-align:center">User Details</h4></th>
+                    </tr>
+                    <tr>
+                            <td><br/><label>EMPID : {{ data[1] }}<label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Email : {{ data[5] }}</label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Phone Number : {{ data[3] }}</label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Department : {{ data[4] }}</label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Salary : {{ data[8] }} </label></td>
+                    </tr>
+                    <tr>
+                            <td><br/><label>Gender : {{ data[7] }}</label></td>
+                    </tr>
+
+            </table>
+        </div>
+        {% endif %}
+
+        {% if error %}
+          <h1> {{error }}</h1>
+        {% endif %}
+</div>
+{% endblock %}

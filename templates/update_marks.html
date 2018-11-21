@@ -3,54 +3,68 @@
 
 {% block content %}
 
-<div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
-        <a href="{{ url_for('teacher_profile') }}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
-        <a href="" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
-        <a href="" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+  <div class="btn-group-lg btn-group-vertical" style="margin-left: 15px;margin-top:30px">
+          <a href="{{ url_for('teacher_profile')}}" class="btn btn-primary btn-lg">Profile</a><br/><br/>
+          <a href="{{ url_for('updatemarks') }}" class="btn btn-primary btn-lg">Update Marks</a>><br/><br/>
+          <a href="{{ url_for('updateattendance') }}" class="btn btn-primary btn-lg">Update Attendance</a><br/><br/>
+          <a href="{{ url_for('StudentInfo') }}" class="btn btn-primary btn-lg">Student Info</a><br/>
+          <a href="{{ url_for('teacherLogout')}}" class="btn btn-primary btn-lg">Logout</a><br/>
 </div>
 
 {% endblock content %}
 
 {% block profile %}
+
+
+
 <div class="content-section">
         <div class="media">
+        <div class="media-body">
+            <h2 class="account-heading">Update Marks </h2>
+        </div>
         <div><br><br>
-          <form action="" method='POST'>
+          <form action="#" method="POST" style="margin-right:225px">
             <div class="form-group">
-              {{ form.usn.label }}<br>
-              {{ form.usn }}
-              <br>
-            </div>
-            <div class="form-group">
-              {{ form.subject_name.label }}<br>
-                       {{ form.subject_name }}
-                       <br>
-            </div>
-            <div class="form-group">
-              {{ form.internal1.label }}<br>
-                       {{ form.internal1 }}
-                       <br>
-            </div>
-            <div class="form-group">
-              {{ form.internal2.label }}<br>
-                         {{ form.internal2 }}
-                         <br>
-            </div>
-            <div class="form-group">
-              {{ form.internal3.label }}<br>
-                       {{ form.internal3 }}
-                       <br>
+              <label for="exampleInputEmail1">USN</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usn" placeholder="Name" required>
             </div>
 
-            {% if error %}
-                <p class=" label label-danger">
-                    Your username and password didn't match.
-                    Please try again.
-                </p>
-            {% endif %}
-                       {{ form.submit }}
-                       <br>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Sem</label>
+              <select class="" name="sem">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Subject</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="subject_name" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Internal1</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="internal1" placeholder="Internal 1" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Internal2</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="internal2" placeholder="Internal 1" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Internal3</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="internal3" placeholder="Internal 1" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+
         </div>
 </div>
+
+
+
 {% endblock %}
